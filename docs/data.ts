@@ -13,7 +13,7 @@ export const NAV_DATA: NavData[] = [
         icon: 'https://avatars.githubusercontent.com/rime',
         title: 'RIME',
         desc: 'RIME | 中州韵输入法引擎官方',
-        link: 'https://github.com/rime/rime',
+        link: 'https://rime.im/',
         platform: ['macOS', 'Windows', 'Linux', 'Android'],
       },
       {

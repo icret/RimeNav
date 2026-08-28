@@ -1,19 +1,34 @@
 import { basename } from 'node:path'
 import { defineConfig } from 'vitepress'
+import type { HeadConfig } from 'vitepress'
 import MarkdownPreview from 'vite-plugin-markdown-preview'
 
 import { head, nav, sidebar } from './configs'
 
 const APP_BASE_PATH = basename(process.env.GITHUB_REPOSITORY || '')
+const base = APP_BASE_PATH ? `/${APP_BASE_PATH}/` : '/'
+
+// head 中的绝对路径不会自动添加 base 前缀，需手动拼接
+const resolvedHead: HeadConfig[] = head.map(([tag, attrs]) => {
+  if (!attrs) return [tag, attrs]
+  const resolved = { ...attrs }
+  if (typeof resolved.href === 'string' && resolved.href.startsWith('/')) {
+    resolved.href = base + resolved.href.slice(1)
+  }
+  if (typeof resolved.content === 'string' && resolved.content.startsWith('/')) {
+    resolved.content = base + resolved.content.slice(1)
+  }
+  return [tag, resolved]
+})
 
 export default defineConfig({
   outDir: '../dist',
-  base: APP_BASE_PATH ? `/${APP_BASE_PATH}/` : '/',
+  base,
 
   lang: 'zh-CN',
   title: 'Rime 输入法生态导航',
   description: 'Rime 输入法生态导航',
-  head,
+  head: resolvedHead,
 
   lastUpdated: true,
   cleanUrls: true,
@@ -49,17 +64,17 @@ export default defineConfig({
 
     /**
      * giscus 评论配置
-     *  repoId / categoryId 请根据 https://giscus.app/zh-CN 生成内容填写
+     * repoId 请根据 https://giscus.app/zh-CN 生成内容填写
      */
     comment: {
       /** github 仓库地址 */
       repo: 'icret/RimeNav',
       /** giscus 仓库 ID */
-      repoId: 'R_kgDOUGztQA',
-      /** Discussion 分类 */
-      category: 'Q&A',
-      /** giscus 分类 ID */
-      categoryId: 'DIC_kwDOUGztQM4DEXO2',
+      repoId: 'R_kgDOUG0Yhg',
+      /** 映射方式：按 discussion 编号 */
+      mapping: 'number',
+      /** 指定 discussion 编号 */
+      term: '2',
     },
 
     footer: {

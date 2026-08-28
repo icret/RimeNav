@@ -38,9 +38,6 @@ const resolvedLink = computed(() => {
 </script>
 
 <template>
-  <!-- 原先的绝对路径 -->
-  <!-- <a v-if="link" class="m-nav-link" :href="link" target="_blank" rel="noreferrer"> -->
-  <!-- 对/article/、/others/链接使用相对路径 -->
   <a v-if="link" class="m-nav-link" :href="resolvedLink" target="_blank" rel="noreferrer">
     <article class="box">
       <div class="box-header">

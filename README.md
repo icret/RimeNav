@@ -33,8 +33,6 @@
 }
 ```
 
->
-
 ## License
 
 [MIT](LICENSE)

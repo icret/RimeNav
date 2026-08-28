@@ -41,7 +41,7 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
     )}px at ${x}px ${y}px)`,
   ]
 
-  // @ts-ignore
+  // @ts-expect-error View Transitions API 未纳入 TS 类型定义
   await document.startViewTransition(async () => {
     isDark.value = !isDark.value
     updateMetaThemeColor()
@@ -74,7 +74,6 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
       <div class="doc-comments">
         <Giscus
           id="comments"
-          mapping="pathname"
           strict="0"
           reactionsEnabled="1"
           emitMetadata="0"

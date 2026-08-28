@@ -1,12 +1,15 @@
 import { h, watch } from 'vue'
 import { useData, EnhanceAppContext } from 'vitepress'
-import DefaultTheme from 'vitepress/theme'
+import DefaultTheme from 'vitepress/theme-without-fonts'
 
 import { createMediumZoomProvider } from './composables/useMediumZoom'
 
 import MLayout from './components/MLayout.vue'
 import MNavIntro from './components/MNavIntro.vue'
 import MNavLinks from './components/MNavLinks.vue'
+
+import 'lxgw-wenkai-screen-web/lxgwwenkaigbscreen/result.css'
+import 'lxgw-wenkai-screen-web/lxgwwenkaimonogbscreen/result.css'
 
 import './styles/index.scss'
 import './styles/tailwind.css'

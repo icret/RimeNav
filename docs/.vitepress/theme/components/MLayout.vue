@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useData, inBrowser } from 'vitepress'
-import DefaultTheme from 'vitepress/theme'
+import DefaultTheme from 'vitepress/theme-without-fonts'
 import { nextTick, provide } from 'vue'
 import Giscus from '@giscus/vue'
 

@@ -21,6 +21,7 @@
     "@types/node": "^26.3.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.3.0",
+    "lxgw-wenkai-screen-web": "^1.522.0",
     "medium-zoom": "^1.1.0",
     "postcss": "^8.5.26",
     "prettier": "^3.9.6",

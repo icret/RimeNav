@@ -92,13 +92,13 @@ const resolvedLink = computed(() => {
   border: 1px solid var(--vp-c-bg-soft);
   border-radius: 8px;
   height: 100%;
-  text-decoration: inherit;
+  text-decoration: none;
   background-color: var(--vp-c-bg-alt);
   transition: all 0.25s;
   &:hover {
     box-shadow: var(--vp-shadow-2);
     border-color: var(--vp-c-brand);
-    text-decoration: initial;
+    text-decoration: none;
     background-color: var(--vp-c-bg);
   }
 
@@ -130,8 +130,10 @@ const resolvedLink = computed(() => {
       fill: currentColor;
     }
     :deep(img) {
-      border-radius: 4px;
-      width: var(--m-nav-icon-size);
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      object-fit: cover;
     }
   }
 

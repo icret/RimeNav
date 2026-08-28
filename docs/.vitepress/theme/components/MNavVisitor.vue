@@ -10,17 +10,13 @@ const { visitor } = theme.value
 <template>
   <img
     v-if="!DEV && visitor"
-    class="visitor"
+    class="visitor ml-2"
     :src="`https://visitor-badge.laobi.icu/badge?page_id=${visitor.badgeId}`"
     onerror="this.style.display = 'none'"
   />
 </template>
 
 <style scoped>
-.visitor {
-  margin-left: 8px;
-}
-
 @media (min-width: 768px) and (max-width: 920px) {
   .visitor {
     display: none;

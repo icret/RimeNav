@@ -1,0 +1,47 @@
+# dependencies
+node_modules
+
+# build output
+dist
+dist-dev
+build
+docs/.vitepress/dist
+docs/.vitepress/cache
+cache
+.cache
+.temp
+.tmp
+.turbo
+
+# logs
+*.log
+.dev.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# non-pnpm lock files
+package-lock.json
+yarn.lock
+
+# env
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# editor
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# tooling
+.codeartsdoer

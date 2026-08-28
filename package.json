@@ -1,0 +1,40 @@
+{
+  "name": "rimenav",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Rime 输入法生态导航",
+  "private": true,
+  "scripts": {
+    "dev": "vitepress dev docs --port=8732",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs --port 8730",
+    "prepare": "husky",
+    "format": "prettier --write ."
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@femm/prettier": "^1.1.0",
+    "@femm/verify-commit": "^1.0.1",
+    "@giscus/vue": "^3.1.1",
+    "@mdit-vue/shared": "^3.0.2",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.3.0",
+    "medium-zoom": "^1.1.0",
+    "postcss": "^8.5.26",
+    "prettier": "^3.9.6",
+    "sass": "^1.103.1",
+    "tailwindcss": "^4.3.3",
+    "vite-plugin-markdown-preview": "^1.1.1",
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.41"
+  },
+  "prettier": "@femm/prettier",
+  "lint-staged": {
+    "*.{js,jsx,tsx,vue,css,scss,less,md,json}": [
+      "prettier --write"
+    ]
+  },
+  "packageManager": "pnpm@11.24.0+sha512.bd27e345e976dcb0be0b7a1228217b049a817e21b1f355c90dbe7dc46671895a8bc1e6d06c24554505ea93ea0b45f489a27ec1bfbc8de6a9659fca0f16fa0000"
+}

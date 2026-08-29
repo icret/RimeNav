@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 import type { HeadConfig } from 'vitepress'
 import MarkdownPreview from 'vite-plugin-markdown-preview'
 
-import { head, nav, sidebar } from './configs'
+import { head, nav, sidebar, navHant, sidebarHant } from './configs'
 
 const APP_BASE_PATH = basename(process.env.GITHUB_REPOSITORY || '')
 const base = APP_BASE_PATH ? `/${APP_BASE_PATH}/` : '/'
@@ -25,9 +25,6 @@ export default defineConfig({
   outDir: '../dist',
   base,
 
-  lang: 'zh-CN',
-  title: 'Rime 输入法生态导航',
-  description: 'Rime 输入法生态导航',
   head: resolvedHead,
 
   lastUpdated: true,
@@ -38,20 +35,11 @@ export default defineConfig({
     lineNumbers: true,
   },
 
-  /* 主题配置 */
+  /* 主题配置（语言无关的共享部分） */
   themeConfig: {
-    i18nRouting: false,
+    i18nRouting: true,
 
     logo: '/favicon.ico',
-
-    nav,
-    sidebar,
-
-    /* 右侧大纲配置 */
-    outline: {
-      level: 'deep',
-      label: '目录',
-    },
 
     /* 社交链接 */
     socialLinks: [{ icon: 'github', link: 'https://github.com/icret/RimeNav' }],
@@ -80,25 +68,71 @@ export default defineConfig({
     footer: {
       copyright: 'Copyright © 2026-present RimeNav',
     },
+  },
 
-    lastUpdated: {
-      text: '最后更新于',
-      formatOptions: {
-        dateStyle: 'short',
-        timeStyle: 'medium',
+  /* 多语言配置：root 为简体默认，zh-Hant 为繁体镜像（/zh-Hant/） */
+  locales: {
+    root: {
+      label: '简体中文',
+      lang: 'zh-CN',
+      title: 'Rime 输入法生态导航',
+      description: 'Rime 输入法生态导航',
+      themeConfig: {
+        nav,
+        sidebar,
+        outline: {
+          level: 'deep',
+          label: '目录',
+        },
+        lastUpdated: {
+          text: '最后更新于',
+          formatOptions: {
+            dateStyle: 'short',
+            timeStyle: 'medium',
+          },
+        },
+        docFooter: {
+          prev: '上一篇',
+          next: '下一篇',
+        },
+        returnToTopLabel: '回到顶部',
+        sidebarMenuLabel: '菜单',
+        darkModeSwitchLabel: '主题',
+        lightModeSwitchTitle: '切换到浅色模式',
+        darkModeSwitchTitle: '切换到深色模式',
       },
     },
-
-    docFooter: {
-      prev: '上一篇',
-      next: '下一篇',
+    'zh-Hant': {
+      label: '繁體中文',
+      lang: 'zh-Hant',
+      link: '/zh-Hant/',
+      title: 'Rime 輸入法生態導航',
+      description: 'Rime 輸入法生態導航',
+      themeConfig: {
+        nav: navHant,
+        sidebar: sidebarHant,
+        outline: {
+          level: 'deep',
+          label: '目錄',
+        },
+        lastUpdated: {
+          text: '最後更新於',
+          formatOptions: {
+            dateStyle: 'short',
+            timeStyle: 'medium',
+          },
+        },
+        docFooter: {
+          prev: '上一篇',
+          next: '下一篇',
+        },
+        returnToTopLabel: '回到頂部',
+        sidebarMenuLabel: '選單',
+        darkModeSwitchLabel: '主題',
+        lightModeSwitchTitle: '切換到淺色模式',
+        darkModeSwitchTitle: '切換到深色模式',
+      },
     },
-
-    returnToTopLabel: '回到顶部',
-    sidebarMenuLabel: '菜单',
-    darkModeSwitchLabel: '主题',
-    lightModeSwitchTitle: '切换到浅色模式',
-    darkModeSwitchTitle: '切换到深色模式',
   },
 
   vite: {

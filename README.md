@@ -5,7 +5,7 @@
 </p>
 <p align="center">RIME | 中州韵输入法引擎生态导航 · macOS | Windows</p>
 <p align="center">
-  <img src="https://img.shields.io/badge/VitePress-1.6.4-646cff" alt="VitePress" />
+  <img src="https://img.shields.io/badge/VitePress-2.0.0--alpha.19-646cff" alt="VitePress" />
   <img src="https://img.shields.io/badge/Vue-3.5-42b883" alt="Vue" />
   <img src="https://img.shields.io/badge/Tailwind%20CSS-4-06b6d4" alt="Tailwind CSS" />
   <img src="https://img.shields.io/badge/pnpm-11.24-f69220" alt="pnpm" />

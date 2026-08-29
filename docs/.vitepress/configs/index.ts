@@ -1,3 +1,3 @@
-export * from './head'
-export * from './nav'
-export * from './sidebar'
+export * from './head.ts'
+export * from './nav.ts'
+export * from './sidebar.ts'

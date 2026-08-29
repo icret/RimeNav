@@ -2,8 +2,9 @@ import { basename } from 'node:path'
 import { defineConfig } from 'vitepress'
 import type { HeadConfig } from 'vitepress'
 import MarkdownPreview from 'vite-plugin-markdown-preview'
+import tailwindcss from '@tailwindcss/vite'
 
-import { head, nav, sidebar, navHant, sidebarHant } from './configs'
+import { head, nav, sidebar, navHant, sidebarHant } from './configs/index.ts'
 
 const APP_BASE_PATH = basename(process.env.GITHUB_REPOSITORY || '')
 const base = APP_BASE_PATH ? `/${APP_BASE_PATH}/` : '/'
@@ -136,7 +137,7 @@ export default defineConfig({
   },
 
   vite: {
-    plugins: [MarkdownPreview()],
+    plugins: [tailwindcss(), MarkdownPreview()],
     css: {
       preprocessorOptions: {
         scss: { api: 'modern-compiler' },

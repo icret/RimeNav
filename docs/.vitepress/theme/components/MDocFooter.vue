@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { inject, Ref, computed } from 'vue'
 import { useData } from 'vitepress'
-import { useSidebar } from 'vitepress/theme-without-fonts'
+import { useLayout } from 'vitepress/theme-without-fonts'
 
 import { usePageId } from '../composables'
 
@@ -9,7 +9,7 @@ const DEV = inject<Ref<boolean>>('DEV')
 const { theme } = useData()
 const { footer, visitor } = theme.value
 
-const { hasSidebar } = useSidebar()
+const { hasSidebar } = useLayout()
 const pageId = usePageId()
 
 const isDocFooterVisible = computed(() => {

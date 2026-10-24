@@ -157,6 +157,13 @@ export const NAV_DATA: NavData[] = [
         link: 'https://github.com/KyleBing/wubi-dict-editor',
         platform: ['macOS', 'Windows', 'Linux'],
       },
+      {
+        icon: 'https://avatars.githubusercontent.com/yorelog',
+        title: 'Yoce Deutsch',
+        desc: '德语输入配置方案',
+        link: 'https://github.com/yorelog/yoce_de',
+        platform: ['macOS', 'Windows', 'Linux', 'Android', 'iOS'],
+      }
     ],
   },
   {
